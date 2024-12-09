@@ -1,75 +1,17 @@
-# Nuxt Minimal Starter
+# Dus jij wilt een head start?
+- Zorg dat je een verstand hebt
+- Zorg dat je motivatie hebt
+- Zorg dat je een computer hebt
+- Zorg dat je een IDE hebt
+- Zorg dat je een internetverbinding hebt
+- Zorg dat je een GitHub account hebt
+- Zorg dat in de github company zit
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Hier is een lijst met dingen die je moet doen:
+## Clone repo en verwijder link
+- ```mkdir newApp && cd newApp && git clone "https://github.com/UitBest/nuxt-Base.git" . && rm -rf .git && rm -rf README.md && npm install && git init && git add . && git commit -m "init" && git branch -M master```
 
-## Setup
+Pro tip: verander na dit command de favicon in public/favicon.ico.
 
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## dev environment
+- ```npm run dev```
