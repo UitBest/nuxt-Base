@@ -26,15 +26,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
 
-  modules: [
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        config.plugins.push(vuetify({ autoImport: true }));
-      });
-    },
-    '@nuxtjs/seo',
-    '@nuxt/eslint',
-  ],
+  modules: ['@nuxtjs/seo', '@nuxt/eslint', 'vuetify-nuxt-module'],
 
   ssr: true,
 
@@ -47,18 +39,15 @@ export default defineNuxtConfig({
 
   serverMiddleware: ['redirect-ssl'],
 
-  plugins: ['~/plugins/vuetify'],
-
   routeRules: {
     '/': {
       redirect: { to: '/home', statusCode: 301 },
     },
   },
 
-  // site: {
-  //   url: '',
-  //   name: '',
-  // },
+  vuetify: {
+    vuetifyOptions: './plugins/vuetify.config.js',
+  },
 
   sitemap: {
     defaults: {
