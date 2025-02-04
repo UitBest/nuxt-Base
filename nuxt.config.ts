@@ -2,6 +2,16 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 
 import routerOptions from './app/router.options';
 
+const allRoutes = () => {
+  const routes = routerOptions.routes([]).map((route) => route?.path);
+
+  const subRoutes = routerOptions
+      .routes([])
+      .flatMap((route) => (route.children ? route.children.map((child) => child?.path) : []));
+
+  return [...routes, ...subRoutes];
+};
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -33,7 +43,9 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'vercel-static',
     prerender: {
-      routes: ['/sitemap.xml'],
+      crawlLinks: true,
+      routes: [...allRoutes(), '/sitemap.xml'],
+      failOnError: false,
     },
   },
 
@@ -53,9 +65,7 @@ export default defineNuxtConfig({
     defaults: {
       lastmod: new Date().toISOString(),
     },
-    urls: () => {
-      return routerOptions.routes([]).map((route) => route.path);
-    },
+    urls: allRoutes(),
     excludeAppSources: true,
   },
 
